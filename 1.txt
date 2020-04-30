@@ -20,6 +20,8 @@ git rm filename 此时从Unmodified 变成Untracked
 mv filename1 filename2 重命名文件
 
 
+git log 查看日志 -p 2 查看前两条日志 按q退出
+
 
 
 
