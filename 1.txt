@@ -17,6 +17,7 @@ Untracked 到 Staged get add
 git rm --cached filename git版本库中的内容会被删除但是当前文件夹中的filename还是存在的 此时filename为Untacked状态
 git rm filename 此时从Unmodified 变成Untracked
 
+mv filename1 filename2 重命名文件
 
 
 
