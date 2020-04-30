@@ -1,0 +1,11 @@
+git clone 克隆地址 filename 从其他服务器克隆一个git仓库 filename 参数自定义新的目录名
+git init  初始化一个git仓库
+git removte 查看分支
+git removte -v 查看主分支
+git status 查看文件状态
+git add 跟踪一个文件
+
+Untracked 未跟踪
+Unmodified 未修改
+Modified  已修改
+Staged 已暂存
