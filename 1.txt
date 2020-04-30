@@ -22,7 +22,17 @@ mv filename1 filename2 重命名文件
 
 git log 查看日志 -p 2 查看前两条日志 按q退出
 
+git commit --amend 重新提交
 
+git checkout --filename 撤销之前所做的修改
+
+git pull 通常会从最初克隆的服务器上抓取数据并自动尝试合并到当前所在的分支
+
+
+git remote show origin 查看远程仓库的更多信息
+git remote rename pb paul 来修改一个远程仓库的简写名。 例如，想要将 pb 重命名为 paul，可以用 git remote rename 这样做：
+
+git remote remove paul 移除paul这个远程仓库
 
 
 
