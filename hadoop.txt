@@ -1,0 +1,4 @@
+1.防火墙关闭
+	1.查看防火墙状态	firewall-cmd --state
+	2.停止firewall	systemctl stop firewalld.service
+	3.禁止firewall开机启动 systemctl disable firewalld.service 
