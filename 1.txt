@@ -9,3 +9,24 @@ Untracked 未跟踪
 Unmodified 未修改
 Modified  已修改
 Staged 已暂存
+
+
+Untracked 到 Staged get add 
+修改文件则文件属性变成 Modified
+一样则是Unmodified
+git rm --cached filename git版本库中的内容会被删除但是当前文件夹中的filename还是存在的 此时filename为Untacked状态
+git rm filename 此时从Unmodified 变成Untracked
+
+
+
+
+
+
+
+
+
+
+
+
+
+
