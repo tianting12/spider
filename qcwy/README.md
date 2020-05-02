@@ -24,7 +24,7 @@ pip3 install -i mongodb https://pypi.douban.com/simple
 
 ### 配置数据库参数
 
-进入文件夹job51Spider
+进入文件夹qcwy
 
 找到settings.py文件，拉到最后配置mysql和mongodb信息
 
@@ -67,7 +67,7 @@ CREATE TABLE `51job` (
 
 ### 自定义地区和搜索词
 
-打开爬虫文件`job51.py`
+：爬虫文件`ajob51.py'
 
 找到以下部分
 
