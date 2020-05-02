@@ -71,7 +71,7 @@ CREATE TABLE `51job` (
 
 找到以下部分
 
-![image-20200321221842297](自定义.png)
+
 
 地区码参考链接：
 
@@ -99,4 +99,4 @@ scrapy crawl job51
 
 以上各功能均已测试没有问题
 
-mongodb和mysql的存储也正常
+mongodb和mysql和csv都正常
