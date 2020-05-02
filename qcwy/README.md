@@ -88,7 +88,7 @@ https://search.51job.com/list/010000,000000,0000,00,9,99,java,2,1.html
 ### 运行爬虫
 
 ```shell
-cd job51Spider
+cd qcwy
 
 scrapy crawl job51
 ```
