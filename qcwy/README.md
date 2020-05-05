@@ -24,7 +24,7 @@ pip3 install -i mongodb https://pypi.douban.com/simple
 
 ### 配置数据库参数
 
-进入文件夹job51Spider
+进入文件夹qcwy
 
 找到settings.py文件，拉到最后配置mysql和mongodb信息
 
@@ -67,11 +67,11 @@ CREATE TABLE `51job` (
 
 ### 自定义地区和搜索词
 
-打开爬虫文件`job51.py`
+：爬虫文件`ajob51.py'
 
 找到以下部分
 
-![image-20200321221842297](自定义.png)
+
 
 地区码参考链接：
 
@@ -88,7 +88,7 @@ https://search.51job.com/list/010000,000000,0000,00,9,99,java,2,1.html
 ### 运行爬虫
 
 ```shell
-cd job51Spider
+cd qcwy
 
 scrapy crawl job51
 ```
@@ -99,4 +99,4 @@ scrapy crawl job51
 
 以上各功能均已测试没有问题
 
-mongodb和mysql的存储也正常
+mongodb和mysql和csv都正常
