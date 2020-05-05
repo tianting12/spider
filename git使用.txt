@@ -74,3 +74,7 @@ $ git config --global core.autocrlf input
 
 如果你是Windows程序员，且正在开发仅运行在Windows上的项目，可以设置false取消此功能，把回车符记录在库中：
 $ git config --global core.autocrlf false
+
+Your branch is ahead of 'origin/master' by 1 commit
+
+说明没有文件需要commit，但是本地仓库 有一个commit ahead原来的master，就是本地仓库有一个提交，比远程仓库要先进一个commit。git push origin master，将本地的master分支推送到origin主机的master分支：
