@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8744631a-72a5-465a-be4e-8c7f6a61cdcf" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZtUqupCF44tnwP6C8Scjl0vGNi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\spdir\zhihu\zhihu" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.zhihu (1)">
+    <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="zhihu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="middlewares" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="zhihu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/zhihu" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zhihu/middlewares.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="verify" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="zhihu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/BearCat2" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/BearCat2/verify.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="zhihu (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="zhihu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/zhihu/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zhihu/spiders/zhihu.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="zhihu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="zhihu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/zhihu/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="G:\spdir\zhihu\zhihu\zhihu\spiders\zhihu.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.zhihu (1)" />
+        <item itemvalue="Python.1" />
+        <item itemvalue="Python.zhihu" />
+        <item itemvalue="Python.verify" />
+        <item itemvalue="Python.middlewares" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8744631a-72a5-465a-be4e-8c7f6a61cdcf" name="Default Changelist" comment="" />
+      <created>1585658077831</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585658077831</updated>
+      <workItem from="1585658104796" duration="69000" />
+      <workItem from="1585662084215" duration="40332000" />
+      <workItem from="1585752286714" duration="35288000" />
+      <workItem from="1585886809410" duration="6673000" />
+      <workItem from="1585924234415" duration="593000" />
+      <workItem from="1586273411426" duration="165000" />
+      <workItem from="1586503026405" duration="385000" />
+      <workItem from="1586503651828" duration="15930000" />
+      <workItem from="1586522071469" duration="3437000" />
+      <workItem from="1586607845481" duration="97000" />
+      <workItem from="1586695839389" duration="18000" />
+      <workItem from="1587735140589" duration="1143000" />
+      <workItem from="1589543568830" duration="2230000" />
+      <workItem from="1589558966839" duration="953000" />
+      <workItem from="1589596669357" duration="1292000" />
+      <workItem from="1589605323752" duration="2759000" />
+      <workItem from="1589974570398" duration="862000" />
+      <workItem from="1589976000431" duration="6806000" />
+      <workItem from="1590076562802" duration="258000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="542" y="172" key="FileChooserDialogImpl" timestamp="1589990796859">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="542" y="172" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589990796859" />
+    <state width="1495" height="274" key="GridCell.Tab.0.bottom" timestamp="1586513463544">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="274" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586513463544" />
+    <state width="1495" height="274" key="GridCell.Tab.0.center" timestamp="1586513463543">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="274" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586513463543" />
+    <state width="1495" height="274" key="GridCell.Tab.0.left" timestamp="1586513463543">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="274" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586513463543" />
+    <state width="1495" height="274" key="GridCell.Tab.0.right" timestamp="1586513463543">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="274" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586513463543" />
+    <state width="1480" height="560" key="GridCell.Tab.1.bottom" timestamp="1585883551010">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1480" height="560" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585883551010" />
+    <state width="1480" height="560" key="GridCell.Tab.1.center" timestamp="1585883551010">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1480" height="560" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585883551010" />
+    <state width="1480" height="560" key="GridCell.Tab.1.left" timestamp="1585883551010">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1480" height="560" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585883551010" />
+    <state width="1480" height="560" key="GridCell.Tab.1.right" timestamp="1585883551010">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1480" height="560" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585883551010" />
+    <state x="302" y="58" key="SettingsEditor" timestamp="1586516268473">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="302" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586516268473" />
+    <state x="430" y="242" key="com.intellij.ide.util.TipDialog" timestamp="1589976003716">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="430" y="242" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589976003716" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585731346294">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585731346294" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/zhihu$0401.coverage" NAME="0401 Coverage Results" MODIFIED="1585715609665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Documents/Tencent Files/1162467606/FileRecv" />
+    <SUITE FILE_PATH="coverage/zhihu$zhihu.coverage" NAME="zhihu Coverage Results" MODIFIED="1585739277079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zhihu/spiders" />
+    <SUITE FILE_PATH="coverage/zhihu$connection.coverage" NAME="connection Coverage Results" MODIFIED="1585880341830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/redis" />
+    <SUITE FILE_PATH="coverage/zhihu$1.coverage" NAME="1 Coverage Results" MODIFIED="1586510939873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop" />
+    <SUITE FILE_PATH="coverage/zhihu$verify.coverage" NAME="verify Coverage Results" MODIFIED="1585895087878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/BearCat2" />
+    <SUITE FILE_PATH="coverage/zhihu$demo.coverage" NAME="demo Coverage Results" MODIFIED="1586503216069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zhihu/spiders" />
+    <SUITE FILE_PATH="coverage/zhihu$zhihu__1_.coverage" NAME="zhihu (1) Coverage Results" MODIFIED="1586513457233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zhihu/spiders" />
+    <SUITE FILE_PATH="coverage/zhihu$settings.coverage" NAME="settings Coverage Results" MODIFIED="1585842067217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zhihu" />
+    <SUITE FILE_PATH="coverage/zhihu$middlewares.coverage" NAME="middlewares Coverage Results" MODIFIED="1585883453719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zhihu" />
+  </component>
+</project>
