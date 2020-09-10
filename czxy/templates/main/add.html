@@ -1,0 +1,83 @@
+{% extends 'login/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Add{% endblock %}
+
+{% block content %}
+    <p>输入两个数求和jquery</p>
+    <form action="{% url 'app:add' %}" method="get">
+        a:<label for="a"></label><input type="text" id="a"> <br>
+        b:<label for="b"></label><input type="text" id="b"> <br>
+        <p>result:<span id="result"></span></p>
+        <button type="button" id="sum">提交</button>
+    </form>
+
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{% static 'js/add_jquery.js' %}"></script>
+
+
+    <div id="myDiv"><h2>输入两个数求和</h2></div>
+    c: <label for="c"></label><input id="c"><br>
+    d: <label for="d"></label><input id="d"><br>
+    <p id="result_ajax">结果：</p>
+    <button type="button" onclick="ajax_request()">求和</button>
+    <script src="{% static 'js/add_ajax.js' %}"></script>
+
+    <br>
+    <h2>这是一个简单的AJAX的测试</h2>
+    <button onclick="getXhr()"> 测试Xhr</button>
+    <script src="{% static 'js/ajax/01ajax.js' %}"></script>
+    <script>
+        function getXhr() {
+            var xhr = createXhr();
+            console.log(xhr);
+        }
+    </script>
+
+    <br>
+    <h2>这是一个AJAX的get</h2>
+    <button onclick="send_ajax()">发送AJAX请求</button>
+    <h2 id="show"></h2>
+    <script>
+        function send_ajax() {
+            //1.创建 xhr
+            var xhr = createXhr();
+            //2.创建请求
+            //xhr.open(method, url, asyn)
+            //3.设置回调函数（判断状态接受响应数据）
+            //xhr.onreadystatechange = function () {}
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById('show').innerText = xhr.responseText;
+                }
+            };
+            //4.发送请求
+            //xhr.send(null)
+            xhr.open('get', '/app/get_ajax01', true);
+            {#xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');#}
+            xhr.send();
+        }
+    </script>
+
+    <br>
+    姓名：<label for="uname"></label><input type="text" id="uname">
+    <button id="btnsend">发送ajaxa请求</button>
+    <p id="show1"></p>
+    <script src="{% static 'js/jquery-1.11.3.js' %}"></script>
+    <script>
+        $(function () {
+            $('#btnsend').click(function () {
+                var xhr1 = createXhr();
+                var url = '/app/get_ajax02/?uname=' + $('#uname').val();
+                xhr1.open('get', url, true);
+                xhr1.onreadystatechange = function(){
+                    if(xhr1.readyState ===4 && xhr1.status ===2000){
+                        $('#show1').html(xhr1.responseText);
+
+                    }
+                }
+                xhr1.send(null);
+            })
+        })
+    </script>
+{% endblock %}

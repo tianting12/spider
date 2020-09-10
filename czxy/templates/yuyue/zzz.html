@@ -1,0 +1,75 @@
+{% load static %}
+<html lang="en">
+<head>
+    <title>实验室预约</title>
+    <link href="{% static 'css/lab.css' %}" rel="stylesheet" type="text/css"/>
+    {#    <script src="{% static 'js/lab.js' %}"></script>#}
+
+</head>
+<body>
+
+<div class="header">
+
+</div>
+
+
+<table id="td">
+    <tr>
+        <td>
+        </td>
+        <td onclick=""><span>星期一</span></td>
+        <td><span>星期二</span></td>
+        <td><span>星期三</span></td>
+        <td><span>星期四</span></td>
+        <td><span>星期五</span></td>
+        <td><span>星期六</span></td>
+        <td><span>星期天</span></td>
+    </tr>
+    <tr>
+        <td>第一二节</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>第三四节</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+</table>
+<script type="text/javascript">
+        var xingqi = document.getElementById('td').rows[0].cells;
+
+       var de = 1;
+        for (var i = 0; i <3; i++) {
+            var x = document.getElementById('td').rows[i].cells;
+
+            for (var j = 0; j < 8; j++) {
+                s = x[j].innerHTML;
+                if (s < de) {
+                    x[j].style.backgroundColor = "green";
+                    x[j].onclick = function () {
+                        alert('禁止预约')
+                    }
+
+
+                }
+            }
+}
+
+</script>
+
+<script>
+</script>
+</body>
+<p id="13"> 123</p>
+</html>

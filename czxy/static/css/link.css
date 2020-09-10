@@ -1,0 +1,242 @@
+/* 0.给所有元素统一设置一些样式：
+        将所有元素的默认边距归零，防止影响后期的布局 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 1.给网页分区并设置每个区域的尺寸 */
+div {
+    border: 1px solid red;
+    margin: 0 auto;
+}
+.logo {
+    width: 960px;
+    height: 61px;
+}
+.menu {
+    height: 91px;
+}
+.core {
+    height: 410px;
+    /* 设置顶部内边距的作用是为了预留渐变条区域 */
+    padding-top: 10px;
+}
+.copr {
+    width: 960px;
+    height: 50px;
+}
+.content {
+    width: 950px;
+    height: 390px;
+    border: 5px solid #8ac1db;
+}
+.content>div {
+    width: 910px;
+    height: 40px;
+}
+/* 等价于.data，加入父元素可以提高优先级 */
+.content>.data {
+    height: 310px;
+}
+
+/* 2.设置背景 */
+body {
+    background-color: #0EA8D8;
+}
+.logo {
+    background-image: url(../img/top_bg.png);
+}
+.menu {
+    background-color: #0488B8;
+}
+.content {
+    background-color: #E8F3F8;
+}
+.core {
+    background: url(../img/content_bg.png) repeat-x top;
+}
+
+/* 3.设置文本样式 */
+body {
+    font-family: "微软雅黑","文泉驿正黑","黑体";
+    font-size: 14px;
+}
+.logo {
+    text-align: right;
+    line-height: 61px;
+}
+.logo>a {
+    margin-right: 40px;
+    text-decoration: none;
+    color: #FFF;
+}
+.logo>a:hover {
+    font-weight: bold;
+}
+.copr>p {
+    text-align: center;
+    color: #FFF;
+    line-height: 25px;
+    height: 25px;
+}
+
+/* 4.设置表格样式 */
+.data>table {
+    border:1px solid #ccc;
+    /* 边框合并必须写在table上 */
+    border-collapse: collapse;
+}
+.data td {
+    border: 1px solid #ccc;
+}
+.data>table {
+    width: 100%;
+}
+.data td {
+    text-align: center;
+}
+.data thead tr {
+    background-color: #FBEDCE;
+    font-weight: bold;
+    height: 40px;
+}
+.data tbody tr {
+    background-color: #FFF;
+    height: 32px;
+}
+.data tbody tr:hover {
+    background-color: #F7F9FD;
+}
+.update {
+    padding-left: 15px;
+    background: url(../img/modification.png) no-repeat left;
+    border: 0;
+    margin-right: 5px;
+}
+.delete {
+    padding-left: 13px;
+    background: url(../img/delete.png) no-repeat left;
+    border: 0;
+}
+
+/* 5.定位logo图片以及消息提示区域 */
+.logo>img {
+    float: left;
+}
+.content>.msg {
+    width: 500px;
+    height: 80px;
+}
+.content {
+    position: relative;
+}
+.content>.msg {
+    position: absolute;
+    top: 110px;
+    left: 225px;
+}
+.msg>img {
+    float: right;
+    margin: 5px;
+    /* 将鼠标编程手型 */
+    cursor: pointer;
+}
+.msg>p {
+    line-height: 80px;
+    margin-left: 38px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.msg {
+    /* 给消息框设置背景：
+        background: 颜色 图片 平铺 x(距离左边的距离) y(距离顶部的距离); */
+    background: #FDECEC url(../img/ok.png) no-repeat 10px 32.5px;
+    border: 1px solid #F68A8A;
+}
+
+
+/* 6.设置菜单区图标的样式 */
+.menu>ul {
+    border: 1px solid yellow;
+    width: 960px;
+    height: 91px;
+    margin: 0 auto;
+    list-style-type: none;
+}
+.menu li {
+    border: 1px solid yellow;
+    width: 68px;
+    height: 77px;
+    margin: 7px 14px;
+    float: left;
+}
+/* 改变列表鼠标悬停时的形状为手型 */
+.menu li:hover {
+    cursor: pointer;
+}
+.index {
+    background-image: url(../img/index_out.png);
+}
+.index:hover {
+    background-image: url(../img/index_on.png);
+}
+.role {
+    background-image: url(../img/role_out.png);
+}
+.role:hover {
+    background-image: url(../img/role_on.png);
+}
+.admin {
+    background-image: url(../img/admin_out.png);
+}
+.admin:hover {
+    background-image: url(../img/admin_on.png);
+}
+.fee {
+    background-image: url(../img/fee_out.png);
+}
+.fee:hover {
+    background-image: url(../img/fee_on.png);
+}
+.account {
+    background-image: url(../img/account_out.png);
+}
+.account:hover {
+    background-image: url(../img/account_on.png);
+}
+.service {
+    background-image: url(../img/service_out.png);
+}
+.service:hover {
+    background-image: url(../img/service_on.png);
+}
+.bill {
+    background-image: url(../img/bill_out.png);
+}
+.bill:hover {
+    background-image: url(../img/bill_on.png);
+}
+.report {
+    background-image: url(../img/report_out.png);
+}
+.report:hover {
+    background-image: url(../img/report_on.png);
+}
+.information {
+    background-image: url(../img/information_out.png);
+}
+.information:hover {
+    background-image: url(../img/information_on.png);
+}
+.password {
+    background-image: url(../img/password_out.png);
+}
+.password:hover {
+    background-image: url(../img/password_on.png);
+}
+
+/* 收尾：去掉开发过程中用来调试的边框 */
+div, .menu>ul, .menu li {
+    border: 0;
+}

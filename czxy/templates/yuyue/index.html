@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<style type="text/css">
+		.warp{
+			width: 640px;
+			height:150px;
+		}
+		ul{
+			padding: 0px;
+			margin:0px;
+			width: 640px;
+			height:50px;
+		}
+		li{
+			padding: 0px;
+			margin:0px;
+			height:50px;
+			width: 80px;
+			box-sizing: border-box;
+			border: 1px solid black;
+			float:left;
+			list-style:none;
+			display: block;
+			text-align: center;
+			line-height: 50px;
+		}
+	</style>
+	<title>课程表</title>
+
+</head>
+<body>
+	<div class="warp">
+		<ul id="yi">
+			<li></li>
+			<li>星期一</li>
+			<li>星期二</li>
+			<li>星期三</li>
+			<li>星期四</li>
+			<li>星期五</li>
+			<li>星期六</li>
+			<li>星期七</li>
+		</ul>
+		<ul id="er">
+			<li>一二节课</li>
+			<li>1</li>
+			<li>0</li>
+			<li>1</li>
+			<li>1</li>
+			<li>0</li>
+			<li>1</li>
+			<li>1</li>
+		</ul>
+		<ul id="san">
+			<li>三四节课</li>
+			<li>0</li>
+			<li>1</li>
+			<li>0</li>
+			<li>1</li>
+			<li>1</li>
+			<li>0</li>
+			<li>1</li>
+		</ul>
+        <ul id="si">
+			<li>五六节课</li>
+			<li>1</li>
+			<li>1</li>
+			<li>0</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>0</li>
+		</ul>
+        <ul id="wu">
+			<li>七八节课</li>
+			<li>1</li>
+			<li>1</li>
+			<li>0</li>
+			<li>1</li>
+			<li>1</li>
+			<li>0</li>
+			<li>1</li>
+		</ul>
+        <ul id="liu">
+			<li>九十节课</li>
+			<li>0</li>
+			<li>0</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>0</li>
+		</ul>
+	</div>
+
+</body>
+<script type="text/javascript">
+		var yi=document.getElementById("yi");
+		var er=document.getElementById("er");
+		var san=document.getElementById("san");
+		var si=document.getElementById('si');
+		var wu=document.getElementById('wu');
+        var liu=document.getElementById('liu');
+
+		var yili=yi.getElementsByTagName("li");//获取到第一排星期的数据
+		var erli=er.getElementsByTagName("li");//获取到一二节课数据
+		var sanli=san.getElementsByTagName("li");//获取到三四节课数据
+        var sili =si.getElementsByTagName('li');
+        var wuli=wu.getElementsByTagName('li');
+        var liuli=liu.getElementsByTagName('li');
+
+		for (var i = 0; i <8; i++) {
+			if(erli[i].innerHTML==0){
+				erli[i].style.backgroundColor="green";
+			}//解决颜色问题
+			if(sanli[i].innerHTML==0){
+				sanli[i].style.backgroundColor="green";
+			}//解决颜色问题
+            if(sili[i].innerHTML==0){
+                sili[i].style.backgroundColor='green';
+            }//解决颜色问题
+            if(wuli[i].innerHTML==0){
+                wuli[i].style.backgroundColor='green';
+            }//解决颜色问题
+            if(liuli[i].innerHTML==0){
+                liuli[i].style.backgroundColor='green';
+            }//解决颜色问题
+
+			erli[i].onclick=(function(){
+				var temp = i;
+				return function(){
+					if(erli[temp].innerHTML==0){
+						alert("禁止预约");
+					}else{
+						alert("这是"+yili[temp].innerHTML+"第一二节课");
+					}
+				}
+			})();//调用立即执行函数解决闭包问题
+			sanli[i].onclick=(function(){
+				var temp = i;
+				return function(){
+					if(sanli[temp].innerHTML==0){
+						alert("禁止预约");
+					}else{
+						alert("这是"+yili[temp].innerHTML+"第三四节课");
+					}
+				}
+			})();//调用立即执行函数解决闭包问题
+            sili[i].onclick=(function(){
+				var temp = i;
+				return function(){
+					if(sili[temp].innerHTML==0){
+						alert("禁止预约");
+					}else{
+						alert("这是"+yili[temp].innerHTML+"第五六节课");
+					}
+				}
+			})();//调用立即执行函数解决闭包问题
+            wuli[i].onclick=(function(){
+				var temp = i;
+				return function(){
+					if(wuli[temp].innerHTML==0){
+						alert("禁止预约");
+					}else{
+						alert("这是"+yili[temp].innerHTML+"第七八节课");
+					}
+				}
+			})();//调用立即执行函数解决闭包问题
+            liuli[i].onclick=(function(){
+				var temp = i;
+				return function(){
+					if(liuli[temp].innerHTML==0){
+						alert("禁止预约");
+					}else{
+						alert("这是"+yili[temp].innerHTML+"第九十节课");
+					}
+				}
+			})();//调用立即执行函数解决闭包问题
+		}
+
+	</script>
+</html>

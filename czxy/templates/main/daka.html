@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="{% static 'js/FileSaver.js' %}"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid red;
+        }
+
+        tr {
+
+            height: 20%;
+        }
+
+        td {
+            border: 1px solid red;
+            width: 70px;
+            padding: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+<table id="tab">
+    <tr>第一天</tr>
+    <tr>
+        <td>数据结构</td>
+        <td>商务智能</td>
+        <td>机器学习</td>
+        <td>设计模式</td>
+        <td>ajax</td>
+        <td>Java</td>
+        <td>storm</td>
+        <td>spark</td>
+        <td>mysql</td>
+        <td>python</td>
+        <td>hadoop</td>
+        <td>django</td>
+        <td>nosql</td>
+
+    </tr>
+    <br>
+    <form action="#" method="get">
+        <input type="submit" value="提交" onclick="getV()"/>
+    </form>
+    <br/>
+   <script type="text/javascript">
+        /* 变颜色的 */
+        function tabCell() {
+            var tab = document.getElementById('tab');
+            var rows = tab.rows;
+            var rlen = rows.length;
+            //写一个数组 把变绿的值加到数组里
+            // var arr=[];
+            for (var i = 1; i < rlen; i++) {
+                var cells = rows[i].cells;
+                for (var j = 0; j < cells.length; j++) {
+                    cells[j].onclick = function () {
+                        if (this.style.background === '') {
+                            this.style.background = 'green';
+                            // arr.push(cells[j]);
+                        } else {
+                            this.style.background = '';
+                            // arr.pop(cells[j]);
+                        }
+
+                    }
+                }
+            }
+        }
+
+        tabCell();//alert(this.firstChild.nodeValue);
+
+        function getV() {
+            var arr = [];
+            var tab = document.getElementById('tab');
+            var rows = tab.rows;
+            var rlen = rows.length;
+            var cells = rows[0].cells;
+            for (var i = 1; i < rlen; i++) {
+                var cells = rows[i].cells;//是个集合
+                // document.write(cells.length);
+                for (var j = 0; j < cells.length; j++) {
+                    // document.write(cells[j].innerHTML)
+                    if (cells[j].style.background == 'green') {
+                        // document.write(cells[j].innerHTML+"\t");
+                        arr.push(cells[j].innerHTML);
+                    } else {
+                        // document.write('');
+                        // arr.push('');
+                    }
+                }
+            }
+
+            document.write(`您的ip是${returnCitySN.cip}您的所在地是${returnCitySN.cname}`)
+            document.write("今天的打卡内容：" + arr);
+            document.write("\t" + new Date());
+            //把以上内容保存到文件里
+            downloadText(`您的ip是${returnCitySN.cip}您的所在地是${returnCitySN.cname}今天的打卡内容:${arr}`,)
+
+        }
+    </script>
+    <script>
+        function downloadText(data) {
+    var blob = new Blob([JSON.stringify(data)], { type: "text/plain;charset=utf-8" });
+    saveAs(blob, "export.txt");
+}
+    </script>
+
+
+
+
+</body>
+</html>

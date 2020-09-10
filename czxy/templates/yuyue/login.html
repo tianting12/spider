@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+ <html lang="en">
+{% load static %}
+ <head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+       <style>
+    .ok {
+      color: green;
+      border: 1px solid green;
+    }
+    .error {
+      color: red;
+      border: 1px solid red;
+    }
+  </style>
+
+    <script src="{% static 'js/ls.js' %}"></script>
+        <script type="text/javascript">
+     function check() {
+    if(document.getElementById("username").value==="") {
+        alert("没有输入用户名！");
+         return false;
+      } else if(document.getElementById("password").value==="") {
+        alert("没有输入密码！");
+        return false;
+      } else {
+        alert("提交成功！");
+        return true;
+       }
+    }
+   </script>
+ </head>
+ <body>
+
+
+  <form name="form1">
+      <label for="username"></label><input type="text" id="username">
+      <label for="password"></label><input type="password" id="password" >
+  <input onclick="check()" type="submit">
+  </form>
+ </body>

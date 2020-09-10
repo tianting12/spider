@@ -1,0 +1,39 @@
+body{
+    /*padding: 90%;*/
+}
+.header{
+        text-align: center;
+        width:90%;
+        height: 5%;
+        border: none;
+        margin-top: 0px;
+        /*padding: 5px;*/
+    }
+img{
+    width: 90%;
+}
+
+td{
+    background-color: #D7D7D7;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #D7D7D7;
+    width: 100px;
+    height: 17px;
+}
+div.body{
+    border: 1px solid #4682B4;
+    border-radius: 5%;
+    width: 25%;
+    height: 15%;
+    margin-left: 12px;
+    float: left;
+    margin-top: 10px;
+}
+span{
+    font-size: 15px;
+}
+form{
+    padding: 5px;
+    font-size: 15px;
+}

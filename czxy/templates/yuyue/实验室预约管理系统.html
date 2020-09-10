@@ -1,0 +1,1158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0052)http://www.ie.zjut.edu.cn/embed/module/lab/index.asp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"><link href="./实验室预约管理系统_files/default.css" rel="stylesheet" id="lhgdialoglink">
+
+<title>实验室预约管理系统</title>
+<link href="./实验室预约管理系统_files/lab.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	
+			function changesel(){ 
+			
+  				document.getElementById("sub").value=0;
+				 var fForm=document.getElementById("selForm");
+					 fForm.submit();
+					 
+
+			}
+			function sel(){ 
+			
+				 var fForm=document.getElementById("selForm");
+					 fForm.submit();
+					 
+
+			}		
+			
+			function handleWeek(ref){
+ 	 			var value=document.getElementById("week").value;
+ 	 			if(ref==-1){	 		
+ 	 				if(value==1){
+ 	 					window.alert("对不起，已到达第一周");
+ 	 					
+ 	 					return true;
+ 	 				}	
+ 	 	 		document.getElementById("week").value=parseInt(value)-1;
+ 	 	 		}
+ 	 			else{
+ 	 				if(value==18){
+ 	 					alert("对不起，已到达最后一周");
+ 	 					return true;
+ 	 				}	
+ 	 	 		document.getElementById("week").value=parseInt(value)+1;
+ 	 			}
+ 	 			sel();
+	 		}
+
+
+</script>
+
+<script language="JavaScript" type="text/javascript" src="./实验室预约管理系统_files/prototype.js.下载"></script>
+<script type="text/javascript" src="./实验室预约管理系统_files/jquery-1.4.1.js.下载"></script>
+<script type="text/javascript" src="./实验室预约管理系统_files/lhgdialog.min.js.下载"></script>
+<script language="JavaScript" type="text/javascript" src="./实验室预约管理系统_files/jquery.qtip-1.0.0-rc3.min.js.下载"></script>
+<script language="JavaScript" type="text/javascript" src="./实验室预约管理系统_files/C_teacher.js.下载"></script>
+
+<script type="text/javascript">
+// Create the tooltips only on document load
+$(document).ready(function() 
+{
+   // By suppling no content attribute, the library uses each elements title attribute by default
+   $('#content [title]').qtip({
+      content: {
+         text: false // Use each elements title attribute
+      },
+      style: 'cream' // Give it some style
+   });
+   
+   // NOTE: You can even omit all options and simply replace the regular title tooltips like so:
+   // $('#content a[href]').qtip();
+});</script>
+
+<script type="text/javascript">
+
+function opchild(getCIID,getCRID)
+{
+    $.dialog({
+	   title:'详细信息',
+	   width: '600px',
+       height: 550,
+	   content:'url:../Lab/BookInfo.asp?action=view&CIID='+getCIID+'&CRID='+getCRID,
+	   cancel:true,
+	   cancelVal:'关闭'	});
+}
+
+</script>
+
+
+</head>
+
+  
+<body onkeydown="if(event.keyCode==13) submitLogin();"><div class="" style="left: 0px; top: 0px; visibility: hidden; position: absolute;"><table class="ui_border"><tbody><tr><td class="ui_lt"></td><td class="ui_t"></td><td class="ui_rt"></td></tr><tr><td class="ui_l"></td><td class="ui_c"><div class="ui_inner"><table class="ui_dialog"><tbody><tr><td colspan="2"><div class="ui_title_bar"><div class="ui_title" unselectable="on" style="cursor: move;"></div><div class="ui_title_buttons"><a class="ui_min" href="javascript:void(0);" title="最小化" style="display: inline-block;"><b class="ui_min_b"></b></a><a class="ui_max" href="javascript:void(0);" title="最大化" style="display: inline-block;"><b class="ui_max_b"></b></a><a class="ui_res" href="javascript:void(0);" title="还原"><b class="ui_res_b"></b><b class="ui_res_t"></b></a><a class="ui_close" href="javascript:void(0);" title="关闭(esc键)" style="display: inline-block;">×</a></div></div></td></tr><tr><td class="ui_icon" style="display: none;"></td><td class="ui_main" style="width: auto; height: auto;"><div class="ui_content" style="padding: 10px;"></div></td></tr><tr><td colspan="2"><div class="ui_buttons" style="display: none;"></div></td></tr></tbody></table></div></td><td class="ui_r"></td></tr><tr><td class="ui_lb"></td><td class="ui_b"></td><td class="ui_rb" style="cursor: se-resize;"></td></tr></tbody></table></div>
+<div id="container"><!--页面层容器-->
+
+    <div id="header_top"><!--页面头部-->    
+    </div>
+    <script type="text/javascript">
+    function submitLogin(){
+	if(document.getElementById("UserName").value==""){
+		alert("请输入用户名！");
+		document.getElementById("UserName").focus();
+		return false;
+	}
+	if (document.getElementById("Password").value == "") {
+		alert("请输入密码！");
+		document.getElementById("Password").focus();
+		return false;
+	}
+	
+	DoLogin()
+
+}
+
+function DoLogin(){
+    var UserName=document.getElementById("UserName").value;
+	var Password=document.getElementById("Password").value;
+	
+	var url = '../../user/syndata.asp';
+    var pars = 'DateType=UserLogin&UserName='+UserName+'&Pwd='+Password;
+	var myAjax = new Ajax.Request(url,{
+			method: 'get',
+			parameters: pars,
+			onComplete: CheckUserLogin
+			});		
+
+}
+
+
+
+function CheckUserLogin(request){
+
+	
+		var content=request.responseText
+		
+	if(content!="")			
+		alert(content);
+	else //进入用户中心
+	{
+		window.location.href="../../user/user_center.asp";
+	};
+	
+
+}
+
+function resetLogin(){
+	document.getElementById("Password").value="";
+	document.getElementById("UserName").value="";
+    
+}
+
+</script>
+
+    <div id="PageBody"><!--页面主体-->
+          <div id="LeftBody"><!--主体左侧-->
+          <label id="loginmsg" class="redtxt"></label>
+            <div id="User">
+            <input name="UserName" type="text" style="background-color:   transparent;   border:   0px " id="UserName" value="" maxlength="50">         </div>
+            <div id="Pwd">
+            <input name="Password" type="password" style="background-color:   transparent;   border:   0px " id="Password" value="">
+            </div>
+            <div id="login_button">
+            <img src="./实验室预约管理系统_files/login_button.gif" border="0" usemap="#Map">
+            <map name="Map" id="Map">
+              <area shape="rect" coords="3,3,114,29" href="http://www.ie.zjut.edu.cn/embed/module/lab/index.asp#" onclick="submitLogin()">
+              <area shape="rect" coords="127,3,240,27" href="http://www.ie.zjut.edu.cn/embed/module/lab/index.asp#" onclick="resetLogin()">
+            </map>
+            </div>
+      </div>
+          
+          <div id="RightBody"><!--主体右侧-->
+          <div id="Top">
+                <div id="top1">注意事项</div>
+                
+                <div id="top2">当前学期：2019/2020第一学期</div>
+          </div>
+             
+              
+<div id="Middle">
+                <div id="middle1">预约起止日期<font color="#FF0000">2019/9/1至2020/1/31</font></div>
+                
+                <div id="middle2">请通过系统预约的教师，务必与相应实验室的管理员确认课程预约情况。</div>
+          </div>   
+          <div id="Bottom"><img src="./实验室预约管理系统_files/02.png"></div>
+          </div>
+    
+    </div>
+    
+    <div id="PageBodyTwo"><!--页面主体-->
+    
+    <!--导航栏输出传递-->
+
+
+   
+         <div id="Nav">
+                <div id="Nav_title">实验室预约情况</div>
+                <div id="Nav_semester">当前学期：2019/2020第一学期</div>
+                <div id="Nav_select"> 
+                <form action="http://www.ie.zjut.edu.cn/embed/module/lab/index.asp#Nav_select" method="post" id="selForm" name="selForm">
+    <!--老师选择---开始-->             
+                 <style>
+	  ul li{ list-style:none;}
+	  #Nav_teacher{float:right; margin-right:200px; margin-top:0px }
+	  #teacherName { width:50px;}
+	  .provinceTeacher { display:none;position:absolute;width:480px;height:310px;border:1px solid #72B9D7; background:#FFF;}
+	  .provinceTeacher .title { width:100%;height:30px;background:url(images/title-bg.png) repeat-x center left;}
+	  .provinceTeacher .title span { margin-left:10px;font-weight:600;color:#FFF;line-height:30px;}
+	  .provinceTeacher .proSelect { width:450px;height:22px;margin:10px 0 6px 15px;}
+	  .provinceTeacher .proSelect select { width:36px;}
+	  .provinceTeacher .proSelect input { display:none;}
+	  .provinceTeacher .teacherList { width:450px;height:200px;margin-left:15px;overflow-y:auto; border:1px solid #72B9D7;}
+	  .provinceTeacher .teacherList ul { width:410px;}
+	  .provinceTeacher .teacherList ul li { float:left;width:50px;height:22px;margin-left:6px;padding-left:6px;line-height:22px;cursor:pointer;}
+		.provinceTeacher .teacherList ul li.DoubleWidthLi { width:328px;}
+	  .provinceTeacher .teacherList ul li:hover { background:#72B9D7;}
+	  .provinceTeacher .button { width:100%;height:40px;margin-top:8px;}
+	  .provinceTeacher .button button { float:right;height:30px;margin-right:20px;padding:4px 10px; background:url(images/title-bg.pngui-bg.png);border:none;color:#000;font-weight:600;cursor:pointer;}</style>
+
+                <div id="Nav_teacher">
+ <label for="teacherName">老师：</label><input type="text" id="teacherName" name="teacherName" value="全部" readonly="" style="cursor:pointer;">
+    <div id="proTeacher" class="provinceTeacher">
+      <div class="title">
+        <span>请选择:</span>
+      </div>
+      <div class="proSelect">
+		<select><option value="00">A</option><option value="01">B</option><option value="02">C</option><option value="03">D</option><option value="04">E</option><option value="05">F</option><option value="06">G</option><option value="07">H</option><option value="08">I</option><option value="09">G</option><option value="10">K</option><option value="11">L</option><option value="12">M</option><option value="13">N</option><option value="14">O</option><option value="15">P</option><option value="16">Q</option><option value="17">R</option><option value="18">S</option><option value="19">T</option><option value="20">U</option><option value="21">V</option><option value="22">W</option><option value="23">X</option><option value="24">Y</option><option value="25">Z</option></select>
+		<span>请选择姓氏首字母</span>
+		<input type="text">
+	  </div>
+      <div class="teacherList">
+        <ul><li>全部</li></ul>
+      </div>
+      <div class="button">
+      	<button flag="0">取消</button>
+        
+      </div>
+    </div>
+  </div>实验室:
+   <!--老师选择---结束-->             
+
+		            
+       <select id="area" name="area" onchange="changesel()">
+        <option value="0">全部</option>
+        <option value="5">1A信息楼-A区</option>
+        
+        <option value="6">1A信息楼-B区</option>
+        
+        <option value="7">1A信息楼-D区</option>
+        
+	    </select>
+                 
+		<select id="sub" name="sub" onchange="sel()">
+       <option value="0">全部</option>
+				
+		</select>
+       
+		
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+
+						<a href="http://www.ie.zjut.edu.cn/embed/module/lab/index.asp#" onclick="handleWeek(-1)"><font color="#000000">&lt;&lt;</font>
+						</a>&nbsp;&nbsp; 第
+                       
+						<select name="week" id="week" onchange="sel()">
+										<option value="1">
+											1
+										</option>
+										<option value="2">
+											2
+										</option>				
+										<option value="3">
+											3
+										</option>
+									    <option value="4">
+											4
+										</option>
+									    <option value="5">
+											5
+										</option>
+									    <option value="6">
+											6
+										</option>
+								        <option value="7">
+											7
+										</option>													
+										<option value="8">
+											8
+										</option>
+        								<option value="9">
+											9
+										</option>
+									
+										<option value="10">
+											10
+										</option>
+									
+										<option value="11">
+											11
+										</option>
+									
+										<option value="12">
+											12
+										</option>
+									
+										<option value="13">
+											13
+										</option>
+									
+										<option value="14">
+											14
+										</option>
+									
+										<option value="15">
+											15
+										</option>
+									
+										<option value="16">
+											16
+										</option>
+									
+										<option value="17">
+											17
+										</option>
+									
+										<option value="18">
+											18
+										</option>
+						</select>
+						周&nbsp;&nbsp;
+						<a href="http://www.ie.zjut.edu.cn/embed/module/lab/index.asp#" onclick="handleWeek(1)"><font color="#000000">&gt;&gt;</font>
+						</a>
+</form> 
+  </div>
+     </div>
+         <div id="Table">
+
+        
+       
+           <div id="content">
+               <table width="860" style="border:1px solid #D7D7D7;" cellspacing="0">
+			<tbody><tr align="center">
+
+				<td width="45" bgcolor="#D7D7D7">&nbsp;
+					
+				</td>
+				<td bgcolor="#D7D7D7">
+					<span class="STYLE4">星期一<br>2020/2/10</span>
+				</td>
+				<td bgcolor="#D7D7D7">
+					<span class="STYLE4">星期二<br>2020/2/11</span>
+				</td>
+				<td bgcolor="#D7D7D7">
+					<span class="STYLE4">星期三<br>2020/2/12</span>
+				</td>
+				<td bgcolor="#D7D7D7">
+					<span class="STYLE4">星期四<br>2020/2/13</span>
+				</td>
+				<td bgcolor="#D7D7D7">
+					<span class="STYLE4">星期五<br>2020/2/14</span>
+				</td>
+				<td bgcolor="#D7D7D7">
+					<span class="STYLE4">星期六<br>2020/2/15</span>
+				</td>
+				<td bgcolor="#D7D7D7">
+					<span class="STYLE4">星期日<br>2020/2/16</span>
+				</td>
+
+			</tr>
+
+			
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第1节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+				
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第2节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+				
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第3节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+				
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第4节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+				
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第5节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+				
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第6节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+				
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第7节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+				
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第8节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+				
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第9节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+				
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第10节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+				
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第11节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+				
+				<tr>
+					<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+						第12节
+					</td>
+					
+						<td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                   	
+						</td><td style="border-collapse:collapse; border:1px solid #D7D7D7;" align="center">
+							<table>
+								<tbody><tr>
+      <td width="100" height="27"></td>
+									
+								</tr>
+							</tbody></table> 
+                        
+					
+				</td></tr>
+			
+		</tbody></table>	
+		
+           </div>
+         </div>
+     </div>
+    
+
+
+    <div id="Footer"><!--页面底部-->  
+        <div id="Contact"> <!--联系方式-->
+         <p>Copyright &#169;2012 浙江工业大学信息工程学院－浙江省嵌入式系统实验教学示范中心</p>
+         <p>地址：杭州市西湖区留和路288号  0571－85290592 邮编：310032  E-mail:wxd@zjut.edu.cn</p>
+        </div> 
+     </div>
+
+
+
+</div>
+
+
+
+
+
+</body></html>

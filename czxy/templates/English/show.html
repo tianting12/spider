@@ -1,0 +1,88 @@
+{% extends 'login/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    english_show
+{% endblock %}
+
+{% block content %}
+    <ul>
+
+            {#        <li style="font-size: 20px"> 单词:{{ word.word }}发音:{{ word.fayin }}</li>#}
+            {#        <Li> 词根：{{ word.cigen }}</Li>#}
+            <table class="table table-bordered">
+                <caption>英语单词 <a href="{% url 'index' %}">返回主页面</a></caption>
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>单词</th>
+                    <th>发音</th>
+                    <th>词根</th>
+                    <th>意思</th>
+                    <th>词频</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for word in page_object %}
+                    <tr>
+                        <td>{{ word.id }}</td>
+                        <td><a href="https://fanyi.baidu.com/?aldtype=23#en/zh/{{ word.word }}">{{ word.word }}</a></td>
+                        <td>
+                            <audio style="height: 30px;width: 100px" src="/static/Media/english_word_mp3/{{word.word}}.mp3" controls="controls"></audio>
+                            <span>{{ word.fayin }}</span>
+                        </td>
+                        <td>{{ word.cigen }}</td>
+                        <td>{{ word.yisi }}</td>
+                        <td>{{ word.pl }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+    </ul>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+
+            {% if page_object.has_previous %}
+                <li>
+                    <a href="{% url 'app:english_study' %}?page={{ page_object.previous_page_number }}"
+                       aria-label="上一个">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="disabled">
+                    <a href="#" aria-label="上一个">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% for page_index in page_range %}
+                {% ifequal page_index page_object.number %}
+                    <li class="active">
+                        <a href="{% url 'app:english_study' %}?page={{ page_index }}">{{ page_index }}</a>
+                    </li>
+                {% else %}
+                    <li>
+                    <a href="{% url 'app:english_study' %}?page={{ page_index }}">{{ page_index }}</a>
+                {% endifequal %}
+
+            {% endfor %}
+            {% if page_object.has_next %}
+                <li>
+                    <a href="{% url 'app:english_study' %}?page={{ page_object.next_page_number }}" aria-label="下一个">
+                        <span aria-hidden="true">&raquo;</span></a>
+                </li>
+            {% else %}
+                <li class="disabled">
+                    <a href="#" aria-label="无">
+                        <span aria-hidden="true">&raquo;</span></a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'login/base.html' %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    {% if request.session.is_login %}
+
+        {% if message %}
+            <div class="alert alert-warning">{{ message }}</div>
+        {% endif %}
+
+        <h1>你好,{{ request.session.user_name }}！欢迎回来！</h1>
+        <div id="homepage_list" style="float:left;">
+            <a href="{% url 'app:home' %}" class="btn btn-default pull-left">
+                <p>add</p>
+
+            </a>
+            <a href="{% url 'app:gy' %}" class="btn btn-default pull-left">
+                <p>gy</p>
+
+            </a>
+            <a href="{% url 'app:echarts_ncov_map' %}" class="btn btn-default pull-left">
+                <p>ncov中国地图</p>
+            </a>
+            <a href="{% url 'app:echarts_ncov_map_add' %}" class="btn btn-default pull-left">
+                <p>ncov中国新增地图</p>
+            </a>
+            <a href="{% url 'app:echarts_ncov_line' %}" class="btn btn-default pull-left">
+                <p>ncov折线图</p>
+
+            </a>
+            <a href="{% url 'app:echarts_ncov_world' %}" class="btn btn-default pull-left">
+                <p>ncov世界地图</p>
+
+            </a>
+            <a href="{% url 'app:echarts_ncov_world_bar' %}" class="btn btn-default pull-left">
+                <p>ncov世界地图柱状图</p>
+
+            </a>
+            <a href="{% url 'app:chengyuidnex' %}" class="btn btn-default pull-left">
+                <p>成语接龙</p>
+
+            </a><a href="{% url 'app:car_logo' %}" class="btn btn-default pull-left">
+                <p>车标</p>
+
+            </a>
+
+            <a href="{% url 'app:english_add' %}" class="btn btn-default pull-left">
+                <p>英语添加</p>
+            </a>
+            <a href="{% url 'app:english_study' %}" class="btn btn-default pull-left">
+                <p>英语学习</p>
+            </a>
+        </div>
+    {% else %}
+    <h1>你尚未登录，只能访问公开内容！</h1>
+    {% endif %}
+{% endblock %}
